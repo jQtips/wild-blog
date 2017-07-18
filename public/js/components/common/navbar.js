@@ -6,11 +6,14 @@ let navbar = {
     controller: ['UsersService', '$state', '$interval', function (UsersService, $state, $interval) {
         'use strict'
 
-        let dateChange = () => {
-            this.date = moment().format('MMMM Do YYYY, h:mm:ss a')
-        }
-        dateChange();
-        setInterval(dateChange, 1000);
+      
+         const dateUpdate = () => {
+             this.date = moment().format('MMMM Do YYYY, h:mm:ss a')
+         }
+ 
+         dateUpdate();
+ 
+         $interval(dateUpdate, 1000)
 
         angular.extend(this, {
             $onInit() {

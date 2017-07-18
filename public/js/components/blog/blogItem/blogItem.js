@@ -81,7 +81,7 @@ let blogItem = {
         }
 
         this.isFav = () => {
-            if (!this.post) return
+            if (this.post)
             return (this.user.bookmarks.find((post_id) => post_id.id === this.post._id))
         }
 

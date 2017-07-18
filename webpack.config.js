@@ -1,7 +1,7 @@
 'use strict';
 
 let liveReloadPlugin = require('webpack-livereload-plugin')
-
+ process.traceDeprecation = true
 module.exports = {
     entry: {
         javascript: './public/js/app.js'
@@ -24,7 +24,7 @@ module.exports = {
         }, {
             test: /\.scss$/,
             loaders: ['style-loader', 'css-loader', 'sass-loader']
-        }]
+            }]
     }
 }
 

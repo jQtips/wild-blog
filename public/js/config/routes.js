@@ -31,4 +31,12 @@ export default ['$stateProvider', '$urlRouterProvider', '$locationProvider', ($s
                 }
             }]
         })
+    .state('algo1', {
+          url: '/algo1',
+          template: '<h1> {{friends}} </h1>',
+          controller: ['$scope', function ($scope) {
+             $scope.people = ["Ryan", "Olliver", "C18", "John", "Sam", "Mark", "", "R2D2"];
+             $scope.friends = $scope.people.filter( (dude) => dude.length === 4);
+          }]
+       })
 }]
